@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{%block title%}login_page{%endblock%}
+{% load static%}
+{%block body%}
+{% comment %} uncomment it while explaining project {% endcomment %}
+<!--==================== MAIN ====================-->
+<main class="main">
+    <!--==================== LOGIN ====================-->
+    <div class="login" id="login">
+        <form method="POST" class="login__form">
+            {% csrf_token %}
+            <h2 class="login__title">Log In</h2>
+            {% for msg in messages %}
+            <center>
+            {% if msg.tags == 'success' %}
+            <h4 style="color: green">{{ msg }}</h4>
+            {% else %}
+            <h4 style="color: red">{{ msg }}</h4>
+            {% endif %}
+            </center>
+            {% endfor %}
+
+            <div class="login__group">
+                <div>
+                    <label for="username" class="sign__label">Username</label>
+                    <input type="username" placeholder="Write your Username" name="loginusername" id="username" class="sign__input" required>
+                 </div>
+
+                <div>
+                    <label for="password" class="login__label">Password</label>
+                    <input type="password" placeholder="Enter your password" name="loginpassword" id="password" class="login__input">
+                </div>
+            </div>
+
+            <div>
+                <p class="login__signup">
+                    check here ?<a href="{% url 'password_reset'%}">Forget password?</a>
+                </p>
+                <p class="login__signup">
+                    You do not have an account? <a href="{% url 'Sign_up'%}">Sign up</a>
+                </p>
+
+                <button type="submit" class="login__button">Log In</button>
+            </div>
+        </form>
+    </div>
+</main>
+{%endblock %}

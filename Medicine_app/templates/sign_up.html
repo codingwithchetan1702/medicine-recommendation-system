@@ -1,0 +1,68 @@
+{% extends 'base.html'%}
+{%block title%}Sign_UP{%endblock%}
+{% load static%}
+{%block body%}
+{% comment %} uncomment it while explaining project {% endcomment %}
+<!--==================== MAIN ====================-->
+<main class="main">
+       <!--==================== Sign Up ====================-->
+       <div class="sign" id="sign">
+        <form method="POST" class="login__form">
+         {% csrf_token %}
+         <h2 class="login__title">Sign In</h2>
+         
+         <div class="login__group">
+            <div>
+               <label for="username" class="sign__label">Username</label>
+               <input type="username" placeholder="Write your Username" name="username" id="username" class="sign__input" required>
+            </div>
+            
+            <div>
+               <label for="email" class="sign__label">Email</label>
+               <input type="email" placeholder="Write your Email" name="Email" id="Email" class="sign__input" required>
+            </div>
+            <div>
+               <label for="M_no" class="sign__label">Modile Number</label>
+               <input type="number" placeholder="Write your Modile Number" name="M_no" id="M_no" class="sign__input" required>
+            </div>
+            <div>
+               <label for="date" class="sign__label">Dob</label>
+               <input type="date" name="dob" id="dob" class="sign__input" required>
+            </div>
+            <div>
+               <label for="gender" class="sign__label">Gender</label>
+                <select id="gender" name="gender" class="sign__input" required>
+                  <option  class="sign__input" value="">Select your gender</option>
+                  <option  class="sign__input" value="male">Male</option>
+                  <option  class="sign__input" value="female">Female</option>
+               </select>
+            </div>
+            <div>
+               <label for="password" class="login__label">Password</label>
+               <input type="password" placeholder="Enter your password" name="password" id="password" class="sign__input" required>
+            </div>
+
+            <div>
+               <label for="repassword" class="sign__label">Config Password</label>
+               <input type="password" placeholder="Enter your config password" name="repassword" id="repassword" class="sign__input" required>
+            </div>
+         </div>
+
+         <div>
+            <p class="login__signup">
+              if you have account than <a href="{% url 'login'%}" id="login-btn">login</a>
+            </p>
+
+
+            <button type="submit" class="sign__button">sign up</button>
+         </div>
+      </form>
+      
+      {% for msg in messages %}
+      <b color="red">{{msg}}</b> 
+      {% endfor %}
+   </div>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{%block title%}login_page{%endblock%}
+{% load static%}
+{%block body%}
+{% comment %} uncomment it while explaining project {% endcomment %}
+<!--==================== MAIN ====================-->
+<main class="main">
+    <!--==================== LOGIN ====================-->
+    <div class="login" id="login">
+        <form method="POST" class="login__form">
+            <h2 class="login__title">MRS - FORGET_PASSWORD_COMPLATE</h2>
+            {% for msg in messages %}
+            <center> <h4 style=" color: green;">{{msg}}</h4> </center>
+            {% endfor %}
+            
+            {% csrf_token %}
+            <div class="login__group">
+                An Email has been sent with instructions to reset your password      
+            </div>
+
+            <div>
+            </div>
+        </form>
+    </div>
+</main>
+{%endblock %}

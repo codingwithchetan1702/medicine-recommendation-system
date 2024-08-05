@@ -1,0 +1,208 @@
+
+<html>
+    <head>
+        <title>Online NEP Result- GUJARAT UNIVERSITY </title>
+        <meta name="google-site-verification" content="HXMTxOPQa0io8eCdNokW7OWy4usMGDijBDj6KEnqZEc" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://resultnep.gujaratuniversity.ac.in/theme/css/local.css" rel="stylesheet">
+        <link href="https://resultnep.gujaratuniversity.ac.in/theme/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://resultnep.gujaratuniversity.ac.in/theme/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://resultnep.gujaratuniversity.ac.in/theme/js/jquery.min.js"></script>
+        <script src="https://resultnep.gujaratuniversity.ac.in/theme/js/bootstrap.js"></script>
+        <script src="https://resultnep.gujaratuniversity.ac.in/theme/js/bootstrap.min.js"></script>
+        <script src="https://resultnep.gujaratuniversity.ac.in/theme/js/local.js"></script>
+        <link rel="stylesheet" type="text/css">
+    </head>
+    
+    <body style="background-color: #3a4d77;">
+        
+    </body>
+</html>
+
+<script type="text/javascript">
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+    $(document).keydown(function (event) {
+        if (event.keyCode == 123) { // Prevent F12
+            return false;
+        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+            return false;
+        }
+    });
+</script>
+
+
+<div class="container">
+    <div id="warn"></div>
+
+    <div class="container" style="min-height: 100%;" >
+        <div class="col-md-8 col-md-offset-2" id="main" >
+            <div class="panel panel-default" id="trial" >
+                <div class="panel-heading-s" >
+                    <h3 class="panel-title-s">NEP  RESULT  PORTAL</h3>
+                </div>
+                <div class="panel-body">
+                    <!--<p style='color: red;text-align:center;
+                       font-size: 24px;'><b>Link for Re-assessment will start from 03-May-2024</b></p>-->
+                                           <div class="wizard-form">
+                        <div id="form-total">
+                            <section>
+                                <div class="inner">
+                                    <div class="wizard-header">
+                                        <div class="row-lg-6" style="color:red;font-weight:bold;text-align:center">
+                                            <div class="alert alert-danger"><strong>Warning! </strong> Captcha does not match.!!!<button type="button" class="close" data-dismiss="alert">&times;</button> </div>                                        </div>
+                                    </div>
+                                    <br>
+                                    <form action="https://resultnep.gujaratuniversity.ac.in/index.php/main/marksheet"  method="post">
+                                        <div class="form-row">
+                                            <div class="form-holder form-holder-2">
+                                                <fieldset>
+                                                    <legend>Select Exam</legend>
+                                                    <select name="exam" id="exam" onchange="getMthYr()" required >
+                                                        <option selected="" disabled="" value="">Select Exam</option>
+                                                                                                                    <option value="111"  >B.A. NEP SEM-1 </option>
+                                                                                                                    <option value="112"  >B.A. NEP SEM-2 </option>
+                                                                                                                    <option value="121"  >B.SC. NEP SEM-1 </option>
+                                                                                                                    <option value="131"  >B.COM. NEP SEM-1 </option>
+                                                                                                                    <option value="132"  >B.COM. NEP SEM-2 </option>
+                                                                                                                    <option value="141"  >B.B.A. NEP SEM-1 </option>
+                                                                                                                    <option value="142"  >B.B.A. NEP SEM-2 </option>
+                                                                                                                    <option value="151"  >B.C.A. NEP SEM-1 </option>
+                                                                                                                    <option value="152"  >B.C.A. NEP SEM-2 </option>
+                                                                                                                    <option value="511"  >B.A.EXT NEP SEM-1 </option>
+                                                                                                                    <option value="512"  >B.A.EXT NEP SEM-2 </option>
+                                                                                                                    <option value="531"  >B.COM.EXT NEP SEM-1 </option>
+                                                                                                                    <option value="532"  >B.COM.EXT NEP SEM-2 </option>
+                                                                                                            </select>
+                                                                                                    </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="form-row" id="fMthYear">
+                                            <div class="form-holder form-holder-2">
+                                                <fieldset>
+                                                    <legend>Select Appeared Exam Month-Year</legend>
+                                                    <select name="year"   id="year" required>
+                                                        <option selected="" disabled="" value="">Select The Year</option>
+                                                    </select>
+                                                                                                    </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-holder form-holder-2">
+                                                <fieldset>
+                                                    <legend>Enter Seat No.</legend>
+                                                    <input type="text" class="form-control" id="SeatNo" placeholder="Enter Seat Number" name="seat" maxlength="5" required >
+                                                                                                    </fieldset>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-holder form-holder-2">
+
+                                                <fieldset>
+                                                    <legend>Enter Captcha Text</legend>
+                                                    <input type="text" class="form-control" id="captcha" placeholder="Enter Captcha Text" name="captcha" maxlength="6" required >
+                                                                                                    </fieldset>
+                                            </div>
+                                            <div class="form-holder ">
+                                                    <img id="Imageid" src="https://resultnep.gujaratuniversity.ac.in/captcha-images/1722612135.8293.jpg" style="width: 230; height: 60; border: 0;" alt=" " />                                            </div>
+
+                                        </div>
+
+
+                                        <br>
+                                        <center><button  class="btn btn-success" id="button1" value="result" name="btnHome"><span class="glyphicon glyphicon-search"></span> <b>View Result</b></button></center><br>
+                                        <div class="form-row" id="btnrecheck">
+                                            <div class="form-holder form-holder-2">
+                                                <div class="form-inline">
+                                                    <div class="col-md-12 text-center">
+                                                        <button id="recheck" name="btnHome" class="btn" value="recheck"><i class="fa fa-hand-o-right" aria-hidden="true"> Apply for Re-Assessment</i></button>
+                                                        <button id="stat" name="btnHome" class="btn" value="statistic"><i class="fa fa-list" aria-hidden="true"> Result Statistics</i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="text-align:center">
+                                       
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom-inner">
+    <div class="c-container">
+        <div class="footer-text">
+            <p style="color: white;font-weight: bold;">©2021 Gujarat University</p>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type='text/javascript'>
+    function getMthYr()
+    {
+        selectedExam = document.getElementById('exam').value;
+        $.ajax({
+            type: "POST",
+            url: "https://resultnep.gujaratuniversity.ac.in/index.php/main/yearDetail",
+            data: {selectedExam: selectedExam},
+            dataType: 'json',
+            cache: false,
+            success: function (msg)
+            {
+                $("#year").empty();
+                var monthArray = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                for (var i = 0; i < msg.length; i++)
+                {
+                    var option = document.createElement('option');
+                    var select = document.getElementById('year');
+
+                    option.text = monthArray[msg[i].fMonthId - 1] + "-20" + msg[i].fYearId;
+                    option.value = ((msg[i].fMonthId).padStart(2, '0')) + msg[i].fYearId;
+                    select.appendChild(option);
+                }
+
+            }
+        });
+    }
+
+    var SeatNo, selectedExam, selectedExamName;
+    var base_url = "https://resultnep.gujaratuniversity.ac.in/";
+    function other()
+    {
+        window.selectedExam = document.getElementById('exam').value;
+    }
+    function getValue()
+    {
+        var captcha = document.getElementById('captcha').value;
+        window.SeatNo = document.getElementById("SeatNo").value;
+        if (window.selectedExam == null)
+        {
+            document.getElementById('warn').innerHTML = "<div class='alert alert-danger'><strong>Warning!</strong> Please select the Exam Name!!! <button type='button' class='close' data-dismiss='alert'>&times;</button> </div>";
+            return false;
+        }
+
+        if (!(Number(window.SeatNo)))
+        {
+
+            document.getElementById('warn').innerHTML = "<div class='alert alert-danger'><strong>Warning!</strong> Please enter correct seat number!!! <button type='button' class='close' data-dismiss='alert'>&times;</button> </div>";
+            return false;
+        }
+        if (captcha != js_captcha)
+        {
+            document.getElementById('warn').innerHTML = "<div class='alert alert-danger'><strong>Warning!</strong> Sorry Wrong Captcha Value <button type='button' class='close' data-dismiss='alert'>&times;</button> </div>";
+            return false;
+        }
+    }
+
+
+
+</script>

@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{%block title%}News_page{%endblock%}
+{% load static%}
+{%block body%}
+<style>
+.news-container {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 100px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 40px;
+}
+.news-title{
+    font-size: 40px;
+    margin: 20px;
+    padding: 10px;
+}
+</style>
+
+<div class="news-container">
+    <div class="news">
+        <h1 class="news-title">Welcome to our News page</h1>
+    </div>
+    {% for msg in messages %}
+    <center>
+        {% if msg.tags == 'success' %}
+            <h4 style="color: green">{{ msg }}</h4>
+        {% elif msg.tags == 'error' %}
+            <h4 style="color: red">{{ msg }}</h4>
+        {% else %}
+            <h4 style="color: blue">{{ msg }}</h4>  <!-- Default color for other types -->
+        {% endif %}
+    </center>
+    {% endfor %}
+    {% for x in api.results %}
+    <div class="card mb-3">
+    <img src="{{ x.image_url }}" class="card-img-top" alt="image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ x.title }}</h5>
+      <p class="card-text">{{ x.description }}</p>
+    </div>
+    <a href="{{ x.article_url }} " class="btn-success">Read More...</a>
+</div>
+{% endfor %}
+</div>
+
+
+{% endblock %}

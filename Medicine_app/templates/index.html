@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+{%block title%}Home{%endblock%}
+{% load static%}
+{%block body%}
+{% comment %} uncomment it while explaining project {% endcomment %}
+<!--==================== MAIN ====================-->
+<main class="main">
+   <img  src="{% static 'img/bg-image.png' %}" alt="image" class="main__bg">
+</main>
+
+<section>
+   <div class="container">
+      <h2 class="text-center">Our Service</h2>
+      <div class="row">
+         <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card" style="width: 30rem;">
+            <img src="{% static 'img/search.jpeg' %}" class="card-img-top" alt="">
+             <div class="card-body">
+               <h5 class="card-title">search page</h5>
+               {% if user.is_authenticated %}
+               <p>Click below to make VIEW Search page.</p>
+               <center>
+                 <div class="card-a">
+                   <a href="{% url 'search' %}" class="btn btn-success">view Search page</a>
+                  </div>
+                </center>
+               <br>
+               {% else %}
+               <center>
+                   <h1 style="color : blue;">Please login to use more features!!!</h1>
+               </center>
+               {% endif %}
+             </div>
+           </div>
+         </div>
+         <div class="col-sm-6">
+           <div class="card" style="width: 30rem;">
+            <img src="{% static 'img/feedback.jpeg' %}" class="card-img-top" alt="">
+             <div class="card-body">
+               <h5 class="card-title">Give Feedback</h5>
+               {% if user.is_authenticated %}
+               <p>Click below to GIVE FEEDBACK </p>
+               <center>
+                 <div class="card-a">
+                   <a href="{% url 'feedback' %}" class="btn btn-success">GIVE FEEDBACK</a>
+                  </div>
+                </center>
+               <br>
+               {% else %}
+               <center>
+                   <h1 style="color : blue;">Please login to use more features!!!</h1>
+               </center>
+               {% endif %}
+             </div>
+           </div>
+         </div>
+       </div>
+   </div>
+</section> 
+
+{%endblock%}
